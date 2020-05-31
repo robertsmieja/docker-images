@@ -5,6 +5,7 @@ Function Invoke-Hadolint {
         [string] $Dockerfile
     )
     
+    Write-Host "Linting... ${Dockerfile}"
     Get-Content $Dockerfile | docker run --rm -i hadolint/hadolint 
 }
 

@@ -4,8 +4,9 @@ hadolint() {
     docker run --rm -i hadolint/hadolint < "${1}"
 }
 
-DOCKERFILES=$(find . -iname Dockerfile)
+DOCKERFILES="$(find . -name Dockerfile)"
 
-for directory in $DOCKERFILES ; do
-    hadolint "$directory"
+for dockerfile in $DOCKERFILES ; do
+    echo "Linting... ${dockerfile}"
+    hadolint "${dockerfile}"
 done
