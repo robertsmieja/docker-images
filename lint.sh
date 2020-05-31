@@ -1,9 +1,11 @@
 #!/usr/bin/env sh
 
 hadolint() {
-    docker run --rm -i hadolint/hadolint < "${1}/Dockerfile"
+    docker run --rm -i hadolint/hadolint < "${1}"
 }
 
-for directory in */ ; do
+DOCKERFILES=$(find . -iname Dockerfile)
+
+for directory in $DOCKERFILES ; do
     hadolint "$directory"
 done
