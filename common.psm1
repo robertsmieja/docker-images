@@ -8,6 +8,7 @@ function Build-DockerImage {
     $parentWorkingDir = Get-Location
     $relativePath = $ContextDir.Replace($parentWorkingDir, "")
 
+    # Remove the first character, as it's a '\'
     $imageName = "robertsmieja/" + $relativePath.Remove(0, 1).Replace("\", "-").ToLower()
 
     Write-Verbose "docker build .${relativePath} --tag ${imageName}:latest --tag ${imageName}:${CurrentGitCommit}"
