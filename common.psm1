@@ -13,7 +13,9 @@ function Build-DockerImage {
 
     Write-Verbose "docker build .${relativePath} --tag ${imageName}:latest --tag ${imageName}:${CurrentGitCommit}"
     docker build ".${relativePath}" --tag ${imageName}:latest --tag ${imageName}:${CurrentGitCommit}
-    # docker push
+    
+    docker push "${imageName}:latest"
+    docker push "${imageName}:${CurrentGitCommit}"
 }
 
 function Invoke-Hadolint {

@@ -32,6 +32,7 @@ buildDockerfile() {
 
 	{ 
 		docker build $contextDir --tag "${imageName}:latest" --tag "${imageName}:${gitCommitHash}" 
+		docker push "${imageName}:latest"
+		docker push "${imageName}:${gitCommitHash}"
 	} || true
-	# docker push
 }
