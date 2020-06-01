@@ -1,15 +1,8 @@
-#!/usr/bin/env pwsh
+#! /bin/env pwsh
 
-Function Invoke-Hadolint {
-    param (
-        [string] $Dockerfile
-    )
-    
-    Write-Host "Linting... ${Dockerfile}"
-    Get-Content $Dockerfile | docker run --rm -i hadolint/hadolint 
-}
+Import-Module .\common.psm1
 
-$Dockerfiles = Get-ChildItem -Recurse -Filter Dockerfile
+$Dockerfiles = Get-Dockerfiles
 
 foreach ($Dockerfile in $Dockerfiles) {
     Invoke-Hadolint $Dockerfile

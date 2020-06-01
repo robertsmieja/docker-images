@@ -1,12 +1,9 @@
-#!/usr/bin/env sh
+#! /usr/bin/env sh
+. ./common.sh
 
-hadolint() {
-    docker run --rm -i hadolint/hadolint < "${1}"
-}
+DOCKERFILES="$(getDockerfiles)"
 
-DOCKERFILES="$(find . -name Dockerfile)"
-
-for dockerfile in $DOCKERFILES ; do
-    echo "Linting... ${dockerfile}"
-    hadolint "${dockerfile}"
+for dockerfile in $DOCKERFILES; do
+	echo "Linting... ${dockerfile}"
+	hadolint "${dockerfile}"
 done
