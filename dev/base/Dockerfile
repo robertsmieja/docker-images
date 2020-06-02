@@ -12,7 +12,18 @@ RUN apk add --no-cache \
 RUN apk add --no-cache \
     curl=7.69.1-r0 \
     git=2.26.2-r0 \
-    git-zsh-completion=5.8-r1
+    git-zsh-completion=5.8-r1 \
+    vim=8.2.0735-r0 
 
 # Oh My ZSH
 RUN sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Powerlevel10k
+RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+#    sed -i "s|ZSH_THEME=.*|ZSH_THEME=\"powerlevel10k/powerlevel10k\"|g" ~/.zshrc
+
+COPY ./root/ /root/
+
+CMD [ "zsh" ]
+
+
