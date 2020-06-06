@@ -22,6 +22,6 @@ RUN apk add --no-cache \
 RUN npm install --global \
     eslint@7.2.0 \
     npm-check-updates@6.0.1 \
-    prettier@2.05 \
+    prettier@2.0.5 \
     ts-node@8.10.2 \
     typescript@3.9.5
