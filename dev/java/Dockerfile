@@ -1,3 +1,4 @@
+# hadolint ignore=DL3007
 FROM robertsmieja/dev-base:latest
 
 # JDK
