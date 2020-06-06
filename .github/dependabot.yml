@@ -4,11 +4,17 @@ updates:
   directory: "/dev/base"
   schedule:
     interval: daily
+  labels:
+  - "automerge"
 - package-ecosystem: docker
   directory: "/dev/java"
   schedule:
     interval: daily
+  labels:
+  - "automerge"
 - package-ecosystem: docker
   directory: "/dev/nodejs"
   schedule:
     interval: daily
+  labels:
+  - "automerge"
