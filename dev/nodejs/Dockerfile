@@ -1,3 +1,4 @@
+# hadolint ignore=DL3007
 FROM robertsmieja/dev-base:latest
 
 # For puppeteer
@@ -16,3 +17,11 @@ FROM robertsmieja/dev-base:latest
 RUN apk add --no-cache \
     nodejs=12.17.0-r0 \
     npm=12.17.0-r0
+
+# NPM packages
+RUN npm install --global \
+    eslint@7.2.0 \
+    npm-check-updates@6.0.1 \
+    prettier@2.05 \
+    ts-node@8.10.2 \
+    typescript@3.9.5
