@@ -4,5 +4,11 @@ updates:
   directory: "/dev/base"
   schedule:
     interval: daily
-    time: '11:00'
-  open-pull-requests-limit: 99
+- package-ecosystem: docker
+  directory: "/dev/java"
+  schedule:
+    interval: daily
+- package-ecosystem: docker
+  directory: "/dev/nodejs"
+  schedule:
+    interval: daily
