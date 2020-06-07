@@ -10,6 +10,7 @@ RUN apk add --no-cache \
 
 # Dev Tools
 RUN apk add --no-cache \
+    cloc=1.86-r0 \
     curl=7.69.1-r0 \
     git=2.26.2-r0 \
     git-zsh-completion=5.8-r1 \
