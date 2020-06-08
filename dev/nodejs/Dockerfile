@@ -21,6 +21,8 @@ RUN apk add --no-cache \
 # NPM packages
 RUN npm install --global \
     eslint@7.2.0 \
+    jest@26.0.1 \
+    lerna@3.22.0 \
     np@6.2.4 \
     npm@6.14.5 \
     npm-check-updates@6.0.1 \
