@@ -15,17 +15,20 @@ FROM robertsmieja/dev-base:latest
 
 # Node
 RUN apk add --no-cache \
-    nodejs=12.17.0-r0 \
-    npm=12.17.0-r0
+    nodejs\
+    npm
 
-# NPM packages
-RUN npm install --global \
-    eslint@7.2.0 \
-    jest@26.0.1 \
-    lerna@3.22.0 \
-    np@6.2.4 \
-    npm@6.14.5 \
-    npm-check-updates@6.0.1 \
-    prettier@2.0.5 \
-    ts-node@8.10.2 \
-    typescript@3.9.5
+# Install PNPM
+RUN npm install --global pnpm
+
+# PNPM packages
+RUN pnpm install --global \
+    eslint \
+    jest \
+    lerna \
+    np \
+    npm-check-updates \
+    pnpm \
+    prettier \
+    ts-node \
+    typescript

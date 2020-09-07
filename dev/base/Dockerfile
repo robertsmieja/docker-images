@@ -5,16 +5,16 @@ RUN apk update
 
 # ZSH
 RUN apk add --no-cache \
-    zsh=5.8-r1 \
-    zsh-autosuggestions=0.6.4-r0
+    zsh \
+    zsh-autosuggestions
 
 # Dev Tools
 RUN apk add --no-cache \
-    cloc=1.86-r0 \
-    curl=7.69.1-r0 \
-    git=2.26.2-r0 \
-    git-zsh-completion=5.8-r1 \
-    vim=8.2.0735-r0 
+    cloc \
+    curl \
+    git \
+    git-zsh-completion \
+    vim
 
 # Oh My ZSH
 RUN sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
