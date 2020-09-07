@@ -14,6 +14,7 @@ RUN apk add --no-cache \
     curl \
     git \
     git-zsh-completion \
+    openssh-client \
     vim
 
 # Oh My ZSH
